@@ -15,7 +15,7 @@ class MainVC: UIViewController {
     var allCountries:[CountryDM] = []
     
     var tableView: UITableView = {
-        let t = UITableView(frame: CGRect.zero)
+        let t = UITableView()
         t.clipsToBounds = true
         t.translatesAutoresizingMaskIntoConstraints = false
         return t
@@ -45,7 +45,7 @@ class MainVC: UIViewController {
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 10)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.register(CountryTVC.self, forCellReuseIdentifier: CountryTVC.identifier)
     }
     

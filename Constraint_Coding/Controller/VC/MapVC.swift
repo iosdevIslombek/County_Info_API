@@ -12,6 +12,7 @@ class MapVC: UIViewController {
     
     var mapCounytry:String = ""
     
+    
     let webView: WKWebView = {
         let web = WKWebView()
         web.translatesAutoresizingMaskIntoConstraints = false
@@ -20,10 +21,11 @@ class MapVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(mapCounytry)
         setUI()
         webView.allowsBackForwardNavigationGestures = true
-        let url = URL(string: mapCounytry)!
-        let request = URLRequest(url: url)
+        let url = URL(string: mapCounytry) ?? URL(string: "https://goo.gl/maps")
+        let request = URLRequest(url: url!)
         webView.load(request)
     }
     

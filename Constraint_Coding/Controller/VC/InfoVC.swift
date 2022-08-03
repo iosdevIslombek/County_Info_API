@@ -197,7 +197,6 @@ class InfoVC: UIViewController {
     @objc func mapTapped(){
         let vc = MapVC()
         vc.mapCounytry = map
-        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
 }
